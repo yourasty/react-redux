@@ -1,23 +1,22 @@
 const initialState = {
   loaded: false,
   error: false,
-  data: {}
-}
+  data: {},
+};
 
-export default function episodes(state = initialState, action){
-  switch(action.type) {
-    case 'FETCH_EPISODES_FULFILLED':{
-      return {loaded: true, data: action.payload}
+export default function episodes(state = initialState, action) {
+  switch (action.type) {
+    case "FETCH_EPISODES_FULFILLED": {
+      return { loaded: true, data: action.payload };
     }
-    case 'FETCH_EPISODES_PENDING':{
-
-      return {loaded: false}
+    case "FETCH_EPISODES_PENDING": {
+      return { loaded: false };
     }
-    case 'FETCH_EPISODES_REJECTED':{
-      return {error: true}
+    case "FETCH_EPISODES_REJECTED": {
+      return { error: true };
     }
-    default:{
-      return state
+    default: {
+      return state;
     }
   }
 }

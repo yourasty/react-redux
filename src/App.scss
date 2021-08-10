@@ -1,4 +1,3 @@
-
 $bgColor: #f1faee;
 $bodyColor: #a8dadc;
 $fontColor: #457b9d;
@@ -7,19 +6,18 @@ $buttonFont: #457b9d;
 $buttonHover: #457b9d;
 $fontHover: #f1faee;
 
-
-body{
+body {
   background-color: $bgColor;
   color: $fontColor;
 }
-*{
+* {
   padding: 0;
   margin: 0;
 }
-ul{
+ul {
   list-style: none;
 }
-#root{
+#root {
   display: flex;
   flex-flow: column;
   width: 90%;
@@ -29,13 +27,12 @@ ul{
   background-color: $bodyColor;
 }
 @media screen and (max-width: 700px) {
-  #root{
+  #root {
     width: 99%;
   }
 }
 
-.shadow
-{
+.shadow {
   max-width: 100%;
   background-color: $bodyColor;
   text-align: center;
@@ -43,9 +40,8 @@ ul{
   flex: 1 1 auto;
 }
 
-.shadow::after
-{
-  content: '';
+.shadow::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -57,32 +53,30 @@ ul{
   z-index: 0;
 }
 
-.title{
-
+.title {
 }
-.show{
+.show {
   display: flex;
   flex-flow: row;
   align-items: center;
 }
 @media screen and (max-width: 700px) {
-  .show{
+  .show {
     flex-flow: column;
   }
 }
-.show_desc{
+.show_desc {
   display: flex;
   flex-flow: column;
   width: 100%;
   flex: 1 1 auto;
   padding: 10px;
 }
-.show_img{
+.show_img {
   max-width: 100%;
   flex: 1 1 auto;
 }
-.show_img_div
-{
+.show_img_div {
   max-width: 50%;
   background-color: $bodyColor;
   text-align: center;
@@ -90,14 +84,13 @@ ul{
   flex: 1 1 auto;
 }
 @media screen and (max-width: 700px) {
-  .show_img_div{
+  .show_img_div {
     max-width: 100%;
   }
 }
 
-.show_img_div::after
-{
-  content: '';
+.show_img_div::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -107,7 +100,7 @@ ul{
   -moz-box-shadow: inset 0 0 10px 10px $bodyColor;
   box-shadow: inset 0 0 10px 10px $bodyColor;
 }
-.season{
+.season {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -115,7 +108,7 @@ ul{
   background-color: $bodyColor;
   padding: 0px 10px;
 }
-.back_button{
+.back_button {
   display: flex;
   height: 30px;
   width: 80px;
@@ -126,18 +119,18 @@ ul{
   margin-top: 10px;
   margin-left: 10px;
 }
-.back_button:hover{
+.back_button:hover {
   background-color: $buttonHover;
   cursor: pointer;
   color: $fontHover;
 }
-.back_link{
+.back_link {
   display: block;
   width: 100px;
   text-align: center;
   z-index: 200;
 }
-.season_button{
+.season_button {
   display: flex;
   flex: 0 1 auto;
   height: 35px;
@@ -149,18 +142,18 @@ ul{
   align-items: center;
   margin: 1px;
 }
-.season_button:hover{
+.season_button:hover {
   background-color: $buttonHover;
   cursor: pointer;
   color: $fontHover;
 }
-.season_button > div{
+.season_button > div {
   display: block;
   width: 100%;
   text-align: center;
   z-index: 200;
 }
-.eplist{
+.eplist {
   z-index: 200;
   display: flex;
   flex-flow: column;
@@ -168,7 +161,7 @@ ul{
   margin-left: 10px;
   margin-right: 10px;
 }
-.eplist{
+.eplist {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -176,11 +169,12 @@ ul{
   background-color: $bodyColor;
   margin-bottom: 20px;
 }
-.eplist_ul{
+.eplist_ul {
   width: 100%;
   z-index: 200;
 }
-.eplist_item, .eplist_item > a{
+.eplist_item,
+.eplist_item > a {
   display: block;
   flex: 0 1 auto;
   min-height: 25px;
@@ -188,27 +182,26 @@ ul{
   border-radius: 5px;
   color: $buttonFont;
 }
-.eplist_item{
+.eplist_item {
   padding-top: 5px;
 }
-.eplist_item > a{
+.eplist_item > a {
   padding-left: 5px;
   background-color: $buttonColor;
   text-align: left;
 }
 
-.epinfo_img_div{
+.epinfo_img_div {
   max-width: 60%;
   max-height: 500px;
   margin: auto;
 }
 
-.epinfo_img{
+.epinfo_img {
   max-width: 100%;
   max-height: 400px;
 }
-.epinfo_img_shadow
-{
+.epinfo_img_shadow {
   width: inherit;
   height: inherit;
   background-color: $bodyColor;
@@ -217,9 +210,8 @@ ul{
   flex: 1 1 auto;
 }
 
-.epinfo_img_shadow::after
-{
-  content: '';
+.epinfo_img_shadow::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -229,12 +221,11 @@ ul{
   -moz-box-shadow: inset 0 0 10px 10px $bodyColor;
   box-shadow: inset 0 0 10px 10px $bodyColor;
 }
-.epinfo_desc_title{
+.epinfo_desc_title {
   padding: 10px;
 }
 
-.epinfo_desc{
-
+.epinfo_desc {
   padding: 10px;
   max-width: 100%;
 }
@@ -247,7 +238,7 @@ a:link {
 
 a:visited {
   text-decoration: none;
-  color: $buttonFont
+  color: $buttonFont;
 }
 
 a:hover {
@@ -259,5 +250,5 @@ a:hover {
 
 a:active {
   text-decoration: none;
-  color: $buttonFont
+  color: $buttonFont;
 }

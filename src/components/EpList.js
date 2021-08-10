@@ -1,42 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
-import {episode} from '../Actions'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { episode } from "../Actions";
 
-export default function EpList(){
+export default function EpList() {
+  const data = useSelector((state) => state.episodes);
+  const season = useSelector((state) => state.season);
+  const episodes = data.data;
+  const loaded = data.loaded;
+  const err = data.error;
+  const dispatch = useDispatch();
 
-  const data = useSelector(state => state.episodes)
-  const season = useSelector(state => state.season)
-  const episodes = data.data
-  const loaded = data.loaded
-  const err = data.error
-  const dispatch = useDispatch()
-
-
-
-  let options = []
+  let options = [];
   if (loaded)
-  Object.keys(episodes).forEach((key) => {
-    if (episodes[key].season === season) options.push(
-      <li key={key} className="eplist_item">
-        <Link
-          to={"/episode"}
-          onClick={() => dispatch(episode(key))}>
-          Episode {episodes[key].number} : {episodes[key].name}
-        </Link>
-      </li>
-    )
-  })
-  else options = err ? 'error, try refreshing' : 'loading...'
-
-
+    // episode list according to selected season
+    Object.keys(episodes).forEach((key) => {
+      if (episodes[key].season === season)
+        options.push(
+          <li key={key} className="eplist_item">
+            <Link to={"/episode"} onClick={() => dispatch(episode(key))}>
+              Episode {episodes[key].number} : {episodes[key].name}
+            </Link>
+          </li>
+        );
+    });
+  else options = err ? "error, try refreshing" : "loading...";
 
   return (
-    <div className='eplist'>
-      <ul className="eplist_ul">
-      {options}
-      </ul>
+    <div className="eplist">
+      <ul className="eplist_ul">{options}</ul>
     </div>
-  )
-
+  );
 }

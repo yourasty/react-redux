@@ -9,7 +9,7 @@ import EpList from "./components/EpList";
 
 function App() {
   const loaded = useSelector((state) => state.show.loaded);
-  const err = useSelector((state) => state.show.err);
+  const err = useSelector((state) => state.show.error);
   if (loaded)
     return (
       <Router>

@@ -1,6 +1,8 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {season} from '../Actions'
+import { Link } from 'react-router-dom'
+
 export default function Season(){
 
   const dispatch = useDispatch()
@@ -12,7 +14,14 @@ export default function Season(){
 
     for (let i = 1; i <= seasons; i++){
       options.push(
-        <div key={i} className="season_button"  onClick={() => dispatch(season(i))}><div>Season {i}</div></div>
+        <Link
+            className="season_button"
+            to="/"
+            onClick={() => dispatch(season(i))}>
+          <div>
+            Season {i}
+          </div>
+        </Link>
       )
     }
 

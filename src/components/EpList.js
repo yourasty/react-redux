@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {episode} from '../Actions'
+
 export default function EpList(){
 
   const data = useSelector(state => state.episodes)
@@ -19,7 +20,7 @@ export default function EpList(){
     if (episodes[key].season === season) options.push(
       <li key={key} className="eplist_item">
         <Link
-          to={"/episode/S"+episodes[key].season+"E"+episodes[key].number}
+          to={"/episode"}
           onClick={() => dispatch(episode(key))}>
           Episode {episodes[key].number} : {episodes[key].name}
         </Link>

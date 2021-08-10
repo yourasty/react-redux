@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {useSelector} from 'react-redux'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import EpInfo from './components/EpInfo'
+import Show from './components/Show'
+import Season from './components/Season'
+import './App.scss';
+import EpList from './components/EpList'
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const loaded = useSelector(state => state.show.loaded)
+  const err = useSelector(state => state.show.err)
+  if (loaded)
+    return (
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Show}></Route>
+          <Route path='/episode' component={EpInfo}></Route>
+        </Switch>
+        <Season />
+        <EpList />
+      </Router>
+    );
+  else{
+    return(
+      <div className="App">
+        {err ? 'error, try refreshing' : 'loading...'}
+      </div>
+    )
+  }
 }
 
 export default App;

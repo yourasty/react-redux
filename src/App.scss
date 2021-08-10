@@ -1,0 +1,262 @@
+
+$bgColor: #f1faee;
+$bodyColor: #a8dadc;
+$fontColor: #457b9d;
+$buttonColor: #f1faee;
+$buttonFont: #457b9d;
+$buttonHover: #457b9d;
+$fontHover: #f1faee;
+
+
+body{
+  background-color: $bgColor;
+  color: $fontColor;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+#root{
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+  min-width: 400px;
+  max-width: 750px;
+  margin: auto;
+  background-color: $bodyColor;
+}
+@media screen and (max-width: 700px) {
+  #root{
+    width: 99%;
+  }
+}
+
+.shadow
+{
+  max-width: 100%;
+  background-color: $bodyColor;
+  text-align: center;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.shadow::after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 0 20px 0px $bgColor;
+  -moz-box-shadow: inset 0 0 20px 0px $bgColor;
+  box-shadow: inset 0 0 10px 0px $bgColor;
+  z-index: 0;
+}
+
+.title{
+
+}
+.show{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+@media screen and (max-width: 700px) {
+  .show{
+    flex-flow: column;
+  }
+}
+.show_desc{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  flex: 1 1 auto;
+  padding: 10px;
+}
+.show_img{
+  max-width: 100%;
+  flex: 1 1 auto;
+}
+.show_img_div
+{
+  max-width: 50%;
+  background-color: $bodyColor;
+  text-align: center;
+  position: relative;
+  flex: 1 1 auto;
+}
+@media screen and (max-width: 700px) {
+  .show_img_div{
+    max-width: 100%;
+  }
+}
+
+.show_img_div::after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 0 10px 10px $bodyColor;
+  -moz-box-shadow: inset 0 0 10px 10px $bodyColor;
+  box-shadow: inset 0 0 10px 10px $bodyColor;
+}
+.season{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  background-color: $bodyColor;
+  padding: 0px 10px;
+}
+.back_button{
+  display: flex;
+  height: 30px;
+  width: 80px;
+  background-color: $buttonColor;
+  color: $buttonFont;
+  border-radius: 5px;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.back_button:hover{
+  background-color: $buttonHover;
+  cursor: pointer;
+  color: $fontHover;
+}
+.back_link{
+  display: block;
+  width: 100px;
+  text-align: center;
+  z-index: 200;
+}
+.season_button{
+  display: flex;
+  flex: 0 1 auto;
+  height: 35px;
+  width: 100px;
+  min-width: 65px;
+  background-color: $buttonColor;
+  color: $buttonFont;
+  border-radius: 5px;
+  align-items: center;
+  margin: 1px;
+}
+.season_button:hover{
+  background-color: $buttonHover;
+  cursor: pointer;
+  color: $fontHover;
+}
+.season_button > div{
+  display: block;
+  width: 100%;
+  text-align: center;
+  z-index: 200;
+}
+.eplist{
+  z-index: 200;
+  display: flex;
+  flex-flow: column;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.eplist{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  background-color: $bodyColor;
+  margin-bottom: 20px;
+}
+.eplist_ul{
+  width: 100%;
+  z-index: 200;
+}
+.eplist_item, .eplist_item > a{
+  display: block;
+  flex: 0 1 auto;
+  min-height: 25px;
+  max-width: 100%;
+  border-radius: 5px;
+  color: $buttonFont;
+}
+.eplist_item{
+  padding-top: 5px;
+}
+.eplist_item > a{
+  padding-left: 5px;
+  background-color: $buttonColor;
+}
+
+.epinfo_img_div{
+  max-width: 60%;
+  max-height: 500px;
+  margin: auto;
+}
+
+.epinfo_img{
+  max-width: 100%;
+  max-height: 400px;
+}
+.epinfo_img_shadow
+{
+  width: inherit;
+  height: inherit;
+  background-color: $bodyColor;
+  text-align: center;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.epinfo_img_shadow::after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 0 10px 10px $bodyColor;
+  -moz-box-shadow: inset 0 0 10px 10px $bodyColor;
+  box-shadow: inset 0 0 10px 10px $bodyColor;
+}
+.epinfo_desc_title{
+  padding: 10px;
+}
+
+.epinfo_desc{
+
+  padding: 10px;
+  max-width: 100%;
+}
+
+a:link {
+  text-decoration: none;
+  color: $buttonFont;
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: none;
+  color: $buttonFont
+}
+
+a:hover {
+  text-decoration: none;
+  color: $fontHover;
+  cursor: pointer;
+  background-color: $buttonHover;
+}
+
+a:active {
+  text-decoration: none;
+  color: $buttonFont
+}

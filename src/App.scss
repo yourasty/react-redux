@@ -6,6 +6,12 @@ $buttonFont: #457b9d;
 $buttonHover: #457b9d;
 $fontHover: #f1faee;
 
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
 body {
   background-color: $bgColor;
   color: $fontColor;
@@ -20,16 +26,11 @@ ul {
 #root {
   display: flex;
   flex-flow: column;
-  width: 90%;
+  width: 99%;
   min-width: 400px;
   max-width: 750px;
   margin: auto;
   background-color: $bodyColor;
-}
-@media screen and (max-width: 700px) {
-  #root {
-    width: 99%;
-  }
 }
 
 .shadow {
@@ -47,14 +48,14 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: inset 0 0 20px 0px $bgColor;
-  -moz-box-shadow: inset 0 0 20px 0px $bgColor;
-  box-shadow: inset 0 0 10px 0px $bgColor;
+  @include box-shadow(0 0 5px 5px rgba($bgColor, .9) inset);
   z-index: 0;
 }
 
-.title {
+h3, h1 {
+  text-shadow: 3px 3px 2px rgba($buttonHover, 0.5);
 }
+
 .show {
   display: flex;
   flex-flow: row;
@@ -96,9 +97,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: inset 0 0 10px 10px $bodyColor;
-  -moz-box-shadow: inset 0 0 10px 10px $bodyColor;
-  box-shadow: inset 0 0 10px 10px $bodyColor;
+  @include box-shadow(0 0 7px 10px rgba($bodyColor, 1) inset);
 }
 .season {
   display: flex;
@@ -118,9 +117,11 @@ ul {
   align-items: center;
   margin-top: 10px;
   margin-left: 10px;
+  @include box-shadow(3px 3px 3px rgba($buttonHover, 0.8));
 }
 .back_button:hover {
   background-color: $buttonHover;
+  @include box-shadow(3px 3px 3px rgba($buttonHover, 0.8));
   cursor: pointer;
   color: $fontHover;
 }
@@ -137,13 +138,20 @@ ul {
   width: 100px;
   min-width: 65px;
   background-color: $buttonColor;
+  @include box-shadow(3px 3px 3px rgba($buttonHover, 0.8));
   color: $buttonFont;
   border-radius: 5px;
   align-items: center;
-  margin: 1px;
+  margin: 2px;
+}
+@media screen and (max-width: 457px) {
+  .season {
+    justify-content: center;
+  }
 }
 .season_button:hover {
   background-color: $buttonHover;
+  @include box-shadow(3px 3px 3px rgba($buttonHover, 0.8));
   cursor: pointer;
   color: $fontHover;
 }
@@ -181,6 +189,7 @@ ul {
   max-width: 100%;
   border-radius: 5px;
   color: $buttonFont;
+
 }
 .eplist_item {
   padding-top: 5px;
@@ -189,6 +198,7 @@ ul {
   padding-left: 5px;
   background-color: $buttonColor;
   text-align: left;
+  @include box-shadow(3px 3px 3px rgba($buttonHover, 0.8));
 }
 
 .epinfo_img_div {
@@ -217,9 +227,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: inset 0 0 10px 10px $bodyColor;
-  -moz-box-shadow: inset 0 0 10px 10px $bodyColor;
-  box-shadow: inset 0 0 10px 10px $bodyColor;
+  @include box-shadow(0 0 10px 10px $bodyColor inset);
 }
 .epinfo_desc_title {
   padding: 10px;
@@ -246,6 +254,7 @@ a:hover {
   color: $fontHover;
   cursor: pointer;
   background-color: $buttonHover;
+  @include box-shadow(3px 3px 3px rgba($buttonHover, 0.8));
 }
 
 a:active {

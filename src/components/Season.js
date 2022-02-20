@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function Season() {
   const dispatch = useDispatch();
   const episodes = useSelector((state) => state.episodes.data);
+  const loc = useSelector(state => state.loc)
   if (episodes) {
     //get number of seasons
     const seasons = episodes[Object.keys(episodes).length - 1].season;
@@ -16,7 +17,7 @@ export default function Season() {
       options.push(
         <Link
           className="season_button"
-          to="/"
+          to={loc}
           onClick={() => dispatch(season(i))}
         >
           <div>Season {i}</div>

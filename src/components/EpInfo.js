@@ -6,11 +6,12 @@ import DOMPurify from "dompurify";
 export default function EpInfo() {
   const episodes = useSelector((state) => state.episodes.data);
   const episode = useSelector((state) => state.episode);
+  const loc = useSelector(state => state.loc)
   if (episodes)
     return (
       <div className="epinfo">
         <div className="back_button">
-          <Link to="/" className="back_link">
+          <Link to={loc} className="back_link">
             BACK
           </Link>
         </div>

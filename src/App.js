@@ -10,12 +10,16 @@ import EpList from "./components/EpList";
 function App() {
   const loaded = useSelector((state) => state.show.loaded);
   const err = useSelector((state) => state.show.error);
+  const loc = useSelector(state => state.loc)
+
+
+
   if (loaded)
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Show}></Route>
-          <Route path="/episode" component={EpInfo}></Route>
+          <Route exact path={loc} component={Show}></Route>
+          <Route path={loc+"episode"} component={EpInfo}></Route>
         </Switch>
         <Season />
         <EpList />

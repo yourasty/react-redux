@@ -29,3 +29,10 @@ export const getEpisodes = (id = 1) => {
     ),
   };
 };
+
+export const setLoc = (loc = "/") => {
+  return {
+    type: "SET_LOC",
+    payload: loc
+  }
+}
